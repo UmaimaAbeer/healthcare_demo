@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remote Access Portal</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f2f5; padding: 50px; }
+        .container { background: white; padding: 20px; border-radius: 8px; width: 300px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #0056b3; }
+        input { width: 100%; padding: 8px; margin: 5px 0; }
+        button { width: 100%; padding: 10px; background: #0056b3; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Remote Access Portal</h2>
+        <p><i>Change Healthcare Internal System</i></p>
+        {% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+        
+        <form method="post">
+            <label>User ID:</label>
+            <input type="text" name="username" placeholder="admin">
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="password123">
+            <button type="submit">Sign In</button>
+        </form>
+        <br>
+        <small><b>Demo Note:</b> 'admin' has NO MFA (Vulnerable). 'dr_smith' has MFA (Secure).</small>
+    </div>
+</body>
+</html>
